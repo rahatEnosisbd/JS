@@ -1,0 +1,38 @@
+let promise = new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve(1), 1000)
+})
+
+promise
+.then(result=>{
+    console.log(result)
+    return result+1
+})
+.then(result=>{
+    console.log(result)
+    return result+1
+})
+.then(result=>{
+    console.log(result)
+    return result+1
+})
+
+
+new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve(10), 1000)
+})
+.then(result=>{
+    console.log(result)
+
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=> resolve(result+1), 1000)
+    }) 
+})
+.then(result=>{
+    console.log(result)
+
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=> resolve(result+1), 1000)
+    }) 
+})
+.then(result=> console.log(result))
+
