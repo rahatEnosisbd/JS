@@ -51,3 +51,5 @@ promise
     result=> console.log(result),
     error=> console.log(error.message)
 )
+
+// line comment
